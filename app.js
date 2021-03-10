@@ -1,11 +1,13 @@
 const express = require('express')
 const bp = require('body-parser')
 
+
 const app = express()
 app.use(bp.urlencoded({extended:false}))
 
-app.get('/crud',(req,res)=>{
+app.get('/crud',(req,res,next)=>{
     res.send('system restfull api')
+    next()
 })
 
 app.get('/crud/:nama',(req,res)=>{
